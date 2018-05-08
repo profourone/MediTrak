@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Pills</ion-title>
+    <ion-buttons end>
+      <button (click)="closeModal()" ion-button icon-only>
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+
+    <ion-item no-lines *ngIf="!pills">No pills! Add something!</ion-item>
+
+    <ion-buttons>
+      <button (click)="addPill()" ion-button icon-only clear item-end>
+        <ion-icon name="add-circle"></ion-icon>
+        Add
+      </button>
+      <button *ngIf="pills" ion-button icon-only clear item-end>
+        <ion-icon name="trash" color="danger"></ion-icon>
+        Remove
+      </button>
+      <button *ngIf="pills" ion-button icon-only clear item-end>
+        <ion-icon name="clipboard"></ion-icon>
+        Save
+      </button>
+    </ion-buttons>
+
+    <!-- Pills -->
+    <ion-item *ngFor="let pill of pills; let i = index" no-lines no-padding>
+      <!-- Toggle Button -->
+      <button ion-item (click)="togglePills(i)" detail-none>
+        <ion-icon item-right name="arrow-dropdown" *ngIf="!pill.open"></ion-icon>
+        <ion-icon item-right name="arrow-dropup" *ngIf="pill.open"></ion-icon>
+        {{ pill.name }}
+      </button>
+
+      <ion-list *ngIf="pill.open">
+        <!-- More details -->
+        <!--<button ion-item detail-none>-->
+          <!--&lt;!&ndash;<ion-icon item-start name="add"></ion-icon>&ndash;&gt;-->
+          <!--&lt;!&ndash;<ion-img style="width: 50px; height: 50px;" src="..." item-start></ion-img>&ndash;&gt;-->
+          <!--&lt;!&ndash;<ion-icon item-end name="checkmark" *ngIf="item.taken"></ion-icon>&ndash;&gt;-->
+          <!--&lt;!&ndash;<ion-badge item-end color="danger" *ngIf="!item.taken" large>{{ pill.dosage }}</ion-badge>&ndash;&gt;-->
+          <!--{{ pill.name }}-->
+        <!--</button>-->
+        <ion-item>
+          <ion-label color="primary">Name</ion-label>
+          <ion-input type="text" placeholder="Enter pill name" [(ngModel)]="pill.name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary">Dosage</ion-label>
+          <ion-input type="number" placeholder="Enter dosage" min="1" max="10" [(ngModel)]="pill.dosage"></ion-input>
+        </ion-item>
+
+      </ion-list>
+
+      <!--<ion-item *ngIf="pill.open">-->
+
+      <!--</ion-item>-->
+
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

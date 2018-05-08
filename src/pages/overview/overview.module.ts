@@ -9,5 +9,8 @@ import { OverviewPage } from './overview';
   imports: [
     IonicPageModule.forChild(OverviewPage),
   ],
+  entryComponents: [
+    OverviewPage,
+  ]
 })
 export class OverviewPageModule {}

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { ViewChild } from '@angular/core';
+import { Slides } from 'ionic-angular';
 /**
  * Generated class for the PillboxPage page.
  *
@@ -13,6 +14,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-pillbox',
   templateUrl: 'pillbox.html',
 })
+
 export class PillboxPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -21,5 +23,15 @@ export class PillboxPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PillboxPage');
   }
+
+@ViewChild('slides') slides: Slides;
+
+ next() {
+   this.slides.slideNext();
+ }
+
+ prev() {
+   this.slides.slidePrev();
+ }
 
 }

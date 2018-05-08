@@ -1,0 +1,64 @@
+{
+  "medications": [
+    {
+      "name": "Medication 1",
+      "days": ["Monday", "Tuesday"],
+      "date": "2018-04-13",
+      "time": "07:00",
+      "taken": true,
+      "pills": [
+        {
+          "name": "Ibuprofen",
+          "color": "red",
+          "shape": "square",
+          "dosage": 1,
+          "image": "imgs\\aspirin.jpg"
+        },
+        {
+          "name": "Rutinoscorbin",
+          "color": "green",
+          "shape": "ellipse",
+          "dosage": 2,
+          "image": "imgs\\aspirin.jpg"
+        },
+        {
+          "name": "Vicodin",
+          "color": "blue",
+          "shape": "circle",
+          "dosage": 1,
+          "image": "imgs\\aspirin.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Medication 2",
+      "days": ["Monday", "Tuesday"],
+      "date": "2018-04-13",
+      "time": "14:00",
+      "taken": false,
+      "pills": [
+        {
+          "name": "Mucosolvan",
+          "color": "red",
+          "shape": "square",
+          "dosage": 1,
+          "image": "./imgs/aspirin.jpg"
+        },
+        {
+          "name": "Tylenol-Codeine",
+          "color": "green",
+          "shape": "ellipse",
+          "dosage": 3,
+          "image": "imgs\\aspirin.jpg"
+        },
+        {
+          "name": "Optivar",
+          "color": "blue",
+          "shape": "circle",
+          "dosage": 1,
+          "image": "imgs\\aspirin.jpg"
+        }
+      ]
+    }
+  ]
+}

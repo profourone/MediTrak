@@ -1,0 +1,63 @@
+<!--
+  Generated template for the AddMedicationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Add medication</ion-title>
+    <ion-buttons end>
+      <button (click)="medication.addMedication(medication)" ion-button icon-only>
+        <ion-icon name="checkmark"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-label color="primary">Name</ion-label>
+      <ion-input type="text" placeholder="Enter medication name" [(ngModel)]="medication.name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary">Dosage</ion-label>
+      <ion-input type="number" placeholder="Enter dosage" min="1" max="10" [(ngModel)]="medication.dosage"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Day</ion-label>
+      <ion-select [(ngModel)]="medication.days" multiple="true">
+        <ion-option value="Monday">Monday</ion-option>
+        <ion-option value="Tuesday">Tuesday</ion-option>
+        <ion-option value="Wednesday">Wednesday</ion-option>
+        <ion-option value="Thursday">Thursday</ion-option>
+        <ion-option value="Friday">Friday</ion-option>
+        <ion-option value="Saturday">Saturday</ion-option>
+        <ion-option value="Sunday">Sunday</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Time</ion-label>
+      <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="medication.time"></ion-datetime>
+    </ion-item>
+
+    <!--(click)="showPillsModal()"-->
+  </ion-list>
+
+  <button (click)="openModal()" ion-button block>
+    Pills
+    <!--<ion-icon name="pulse"></ion-icon>-->
+  </button>
+
+  <!--openModal()-->
+  <!--<button (click)="addMedication()" ion-button block>Add</button>-->
+  <!--<button (click)=""></button>-->
+
+</ion-content>
